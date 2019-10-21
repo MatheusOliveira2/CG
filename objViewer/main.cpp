@@ -55,19 +55,19 @@ float convert(float grau){
 class MyIHClass : public VART::ViewerGlutOGL::IdleHandler
 {
     public:
-        MyIHClass() : i(36){}
+        MyIHClass() : i(0){}
         virtual ~MyIHClass() {}
         virtual void OnIdle(){
             i+=1;
             int count = 0;
             for(int j = 0; j < 10; j++){
-                float y = count+i;
-                float z = count+i; 
+                float y = count+i+18;
+                float z = count+i+18; 
                 chairTrans[j]->MakeTranslation(0,cos(convert(y))*70,sin(convert(z))*70);
-                viewerPtr->PostRedisplay();
                 count+=36;
             }
             wheelTrans->MakeXRotation(convert(i));
+            viewerPtr->PostRedisplay();
         }
     //protected:
         VART::Transform *chairTrans[10];

@@ -117,6 +117,10 @@ int main(int argc, char* argv[])
         if((*iter)->GetDescription()=="chair"){
             chair = *iter;
             for(int i = 1; i<=10; i++){
+				if(i%2==0)
+					chair->SetMaterial(VART::Material::PLASTIC_RED());	
+				else
+					chair->SetMaterial(VART::Material::PLASTIC_GREEN());	
                 chairTransform[i-1].AddChild(*dynamic_cast<VART::SceneNode*>(chair->Copy()));
                 scene.AddObject(&chairTransform[i-1]);
             }           

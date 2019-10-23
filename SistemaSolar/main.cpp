@@ -35,7 +35,7 @@ class MyIHClass : public VART::ViewerGlutOGL::IdleHandler
             terraTranslation += 1;
             luaTranslation += 2;
             solRot->MakeZRotation(redRadians);
-            terraRot->MakeZRotation(redRadians);
+            terraRot->MakeZRotation(redRadians*2);
             float x = convert(terraTranslation);
             float y = convert(terraTranslation);
             terraTrans->MakeTranslation(cos(x)*10,sin(y)*10,0);

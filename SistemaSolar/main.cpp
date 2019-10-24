@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
     static VART::ViewerGlutOGL viewer; // create a viewer (application window)
 
     // create a camera (scene observer)
-    VART::Camera camera(VART::Point4D(0,0,6),VART::Point4D(0,0,0),VART::Point4D(0,1,0,0));
+    VART::Camera camera(VART::Point4D(0,-20,10),VART::Point4D(0,0,0),VART::Point4D(0,1,0,0));
     // create some objects
     VART::Texture texture;
     VART::Material material;
@@ -138,6 +138,7 @@ int main(int argc, char* argv[])
     scene.AddObject(&terraTranslation);
     scene.AddLight(VART::Light::BRIGHT_AMBIENT());
     scene.AddCamera(&camera);
+    
     // Set up the Idle Handler
     idleHandler.solRot = &solRotation;
     idleHandler.terraRot = &terraRotation;
@@ -150,6 +151,7 @@ int main(int argc, char* argv[])
     viewer.SetTitle("Sistema Solar");
     viewer.SetScene(scene); // attach the scene
     viewer.SetIdleHandler(&idleHandler); // attach the idle handler to the viewer
+
 
     scene.DrawLightsOGL(); // Set OpenGL's lights' state
     VART::ViewerGlutOGL::MainLoop(); // Enter main loop (event loop)

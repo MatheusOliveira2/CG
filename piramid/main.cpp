@@ -71,13 +71,13 @@ int main(int argc, char* argv[])
     VART::Point4D v6(2,4,0);
     VART::Point4D v7(2,4,2);
     VART::Point4D v8(0,4,2);
-    VART::Point4D v9(1,2,1);
+    //VART::Point4D v9(1,2,1);
     vector<VART::Point4D> vet2;
     vet2.push_back(v5);
     vet2.push_back(v6);
     vet2.push_back(v7);
     vet2.push_back(v8);
-    vet2.push_back(v9);
+    vet2.push_back(v4);
     piramide2.SetVertices(vet2);
     string face6="1 4 0";
     string face7="2 4 1";
